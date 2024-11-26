@@ -7,8 +7,33 @@ import java.util.Arrays;
 public class Aufgabe4 {
 
     private static int[][] generateFilled2DArray(int n) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        int[][] array = new int[n][n];
+        int half = n / 2;
+
+
+        //Array befüllen mit den Diagonalen 1,2,3,4,5 ...
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                array[i][j] = Math.abs(i - j) + 1;
+            }
+        }
+
+        //das 3x3 Feld in der Mitte mit -1 befüllen
+        if(n >= 3){
+            for(int i = half - 1; i <= half + 1; i++){
+                for(int j = half - 1; j <= half + 1; j++){
+                    //bei i = half und j = half eine 1 setzen => Mitte
+                    if(i == half && j == half){
+                        array[i][j] = 1;
+                    }
+                    else{
+                        array[i][j] = -1;
+                    }
+                }
+            }
+        }
+
+        return array; //Zeile kann geändert oder entfernt werden.
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
