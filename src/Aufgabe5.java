@@ -7,8 +7,19 @@ import java.util.Arrays;
 public class Aufgabe5 {
 
     private static int[][] generateExtendedArray(int[] inputArray) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return null; //Zeile kann geändert oder entfernt werden.
+        int[][] extendedArray = new int[inputArray[1]-inputArray[0] + 1][];
+        int countCol = inputArray[0];
+        int countRow = inputArray[1]-inputArray[0] + 1;
+        int input = inputArray[2];
+        for(int i = 0; i < countRow; i++){
+            extendedArray[i] = new int[countCol];
+            for(int j = 0; j < countCol; j++){
+                extendedArray[i][j] = input;
+                input++;
+            }
+            countCol++;
+        }
+        return extendedArray; //Zeile kann geändert oder entfernt werden.
     }
 
     //Vorgegebene Methode - BITTE NICHT VERÄNDERN!
